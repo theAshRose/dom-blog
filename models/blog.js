@@ -20,17 +20,17 @@ Blog.init(
             allowNull: false,
             unique: true
         },
-        author_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'author',
+                model: 'user',
                 key: 'id'
             }
         }
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'blog',
