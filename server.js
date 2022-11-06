@@ -1,22 +1,35 @@
-const path = require('path');
+const exphbs = require('express-handlebars');
+
 const express = require('express');
 const session = require('express-session')
-const exhbs = require('express-handlebars');
+const app = express();
 const cookieObj = require('connect-session-sequelize')(session.Store)
 const sequelize = require('./config/connection')
 const routes = require('./controllers')
-const app = express();
+
+const helpers = require('./utils/helpers')
+
+
 require('dotenv').config()
+const path = require('path');
 const PORT = process.env.PORT || 3001;
+app.use(require('./controllers/home-routes'))
 
-
+app.use(express.static(path.join(__dirname, 'public')))
+const hbs = exphbs.create({ helpers })
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.engine('handlebars', hbs.engine)
+
+
+// app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('view engine', 'handlebars')
+
 app.use(routes);
-
-
-
-
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => 
+    console.log(`App listening on port ${PORT}!`));
+});
 
 // const sess = {
 //     secret: 'Super secret secret',
@@ -41,8 +54,4 @@ app.use(routes);
 //     }),
 //   };
 
-  sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => 
-      console.log(`App listening on port ${PORT}!`));
-  });
   
