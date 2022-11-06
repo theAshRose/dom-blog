@@ -37,19 +37,19 @@ User.init(
     },
   },
   {
-    hooks: {
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 12);
-        return newUserData;
-      },
-      async beforeBulkCreate(users) {
-      for (const user of users) {
-        const {password} = user
-        var hash = bcrypt.hash(password)
-        user.password = hash;
-      }
-    }
-    },
+    // hooks: {
+    //   async beforeCreate(newUserData) {
+    //     newUserData.password = await bcrypt.hash(newUserData.password, 12);
+    //     return newUserData;
+    //   },
+    //   async beforeBulkCreate(users) {
+    //   for (const user of users) {
+    //     const {password} = user
+    //     var hash = bcrypt.hash(password)
+    //     user.password = hash;
+    //   }
+    // }
+    // },
     
     sequelize,
     timestamps: false,

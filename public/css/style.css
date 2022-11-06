@@ -14,38 +14,133 @@
 
 body {
     background-image: linear-gradient(to left, var(--ddblue), var(--dblue), var(--blue), var(--lblue));
-    min-height: 100vh;
+    /* min-height: 100vh; */
+}
+
+#headerWrapper {
+    padding-left:15px;
+    padding-top: 15px;
+}
+
+.signInBtn {
+    margin-top: 10px;
+}
+
+form {
+    padding: 10px;
+    margin: 10px;
+    border-style: dashed;
+    border-color: var(--pink);
+    border-width: 3px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+}
+
+.blogTitle {
+    border-left-style: dashed;
+    border-width: 4px;
+    border-color: var(--pink);
+    margin: 5px;
+    padding-left: 8px;
+}
+
+.blogWrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+
+.blogContent {
+    margin-bottom: 8px;
+    margin-top:10px;
+    
+}
+
+#text {
+    font-size: 32px;
+}
+
+sm {
+    color: var(--pink);
+}
+
+a.navlink {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+hr {
+    margin-top: 0px;
+    /* margin: 10px; */
+    border-color: var(--pink);
+    border-style: dashed;
+    border-width: 1px;
+}
+
+.eachPeanut {
+    margin-right: 2px;
+}
+
+.peanutGallery {
+    margin-bottom: 5px;
+    border-style: dashed;
+    border-color: var(--blue);
+    border-width: 1px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    padding-left: 4px;
 }
 
 main {
-    margin-top: 100px;
-}
-
-
-nav {
-    margin-top: 200px;
-}
-
-#navbar-ul {
-    list-style: none;
-}
-
-header#jumbotron1.container {
+    margin-top: 60px;
     padding: 0px;
     background-color: #01012b;
     border-style: dashed;
-    border-left-width: 7px;
-    border-left-width: 7px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
     border-color:#05d9e8;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: var(--dblue);
+    border-bottom-color: var(--dblue);
+}
+
+.navBtn {
+    background-color: var(--ddblue);
+    border-style: dashed;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-color:var(--pink);
+
+}
+
+.addPeanut {
+    margin-left: 10px;
+}
+
+.commentEditBtns {
+    margin-right: 8px;
+}
+
+.commentInput {
+    margin-bottom: 10px;
+}
+
+input.col-8 {
+    color: var(--ddblue);
 }
 
 #jumbotron1 {
     padding: 0px;
     background-color: #01012b;
     border-style: dashed;
-    border-left-width: 7px;
-    border-left-width: 7px;
+    border-bottom-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 5px;
+    
     border-color:#05d9e8;
+    border-bottom-color: var(--dblue);
 }
 
 
