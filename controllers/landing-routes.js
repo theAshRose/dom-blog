@@ -15,9 +15,9 @@ router.get('/', async (req, res) => {
             })
 
         const blogs = blogData.map((post) => post.get({ plain: true }));
-        res.render('home',
-            { blogs
-            // isLogged: req.session.isLogged 
+        res.render('landing',
+            { blogs,
+            LoggedIn: req.session.LoggedIn
         });
     } catch (err) {
         console.log(err)

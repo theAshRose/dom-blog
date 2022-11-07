@@ -15,17 +15,17 @@ router.post('/login', async (req, res) => {
             return;
         }
         console.log("elfmeat best meat2")
-        // const validPassword = await userData.checkPassword(req.body.password); COME BACK TO ME BYCRTPTPPTPT
+        const validPassword = await userData.checkPassword(req.body.password); 
         
-        if (!req.body.password) {
+        if (!validPassword) {
             res.status(400).json(err);
             return;
         }
 
             console.log("finish me if you DARE")
-            
+
             req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.LoggedIn = true;
 
             res.status(200).json({userData});
         });

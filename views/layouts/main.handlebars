@@ -19,12 +19,12 @@
                 <p class="row-12 lead" id="main-title-text">This is a description for the tech blog!</p>
             </div>
             <nav id="nav" class="col-4 d-flex justify-content-end offset-8" style="display: inline-block">
-                <a href="#" class="navlink"><button class="navBtn">Home</button></a>
-                <a href="#" class="navlink"><button class="navBtn">Dashboard</button></a>
-                <a href="#" class="navlink"><button class="navBtn">Sign up</button></a>
+                <a href="/home" class="navlink"><button class="navBtn">Home</button></a>
+                <a href="/dashboard" class="navlink"><button class="navBtn">Dashboard</button></a>
+                <a href="/signup" class="navlink"><button class="navBtn">Sign up</button></a>
                 <a href="/login" id = "logInBtn" class="navlink"><button class="navBtn">Log In</button></a>
-                {{#if loggedIn}}
-                <a href="/login" id = "logOutBtn" class="navlink"><button class="navBtn">Log Out</button></a>
+                {{#if LoggedIn}}
+                <a href="/" id = "logOutBtn" class="navlink"><button class="navBtn">Log Out</button></a>
                 {{/if}}
             </nav>
         </div>

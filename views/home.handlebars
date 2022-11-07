@@ -1,12 +1,13 @@
+
 {{#each blogs}}
 {{>blogs}}
 <h2 class="blogTitle">{{this.title}}</h2>
 <p class="blogContent">{{this.content}}, {{make_date createdAt}}
 </p> 
-{{/each}}
+
 <br>
 
-{{#if loggedIn}}
+
 <div class="authorWrapper row-4">
     <a href="#" class="addPeanut"><button class="navBtn">Comment</button></a>
     <i class="bogPostBy col-4 offset-lg-8 offset-md-7">
@@ -17,22 +18,21 @@
         <a href="#" class="editPeanut"><button class="navBtn">delete</button></a>
     </div>
 </div>
-<div class="commentInput row-12">
-    <input class="col-8"><a class="commentSaveBtn col-4"><button class="navBtn">Save Comment</button></a>
+<div style="display: none"class="commentInput row-12">
+    <input  class="col-8"><a class="commentSaveBtn col-4"><button class="navBtn">Save Comment</button></a>
 </div>
+{{/each}}
 
-<hr>
-
+{{#each comments as |comment|}}
+{{>comment}}
 <div class="peanutWrapper row-12">
     <div class="eachPeanut row-3">
         <p class="peanutGallery">
-            I am comments, I have an opion, am i correct? most likely no.
-            I am comments, I have an opion, am i correct? most likely no.
-            I am comments, I have an opion.
+           {{comment.content}}
         </p>
         <div class="authorWrapper row 4">
             <i class="bogPostBy row-2 offset-lg-5 offset-md-4">
-                <sm>By Author Here at 02/22/222 24:00:24 </sm>
+                <sm>{{comment user.username}} {{make_date createdAt}}</sm>
 
             </i>
 
@@ -44,4 +44,6 @@
         </div>
     </div>
 </div>
-{{/if}}
+
+<hr>
+{{/each}}
