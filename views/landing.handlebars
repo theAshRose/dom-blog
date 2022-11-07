@@ -1,0 +1,15 @@
+{{#each blogs}}
+{{>blogs}}
+<h2 class="blogTitle">{{this.title}}</h2>
+<p class="blogContent">
+    {{this.content}}
+    <br>
+<div class="authorWrapper row 4">
+    <i class="bogPostBy col-4 offset-lg-8 offset-md-7">
+        <sm>{{user.username}}, {{make_date createdAt}}</sm>
+    </i>
+</div>
+<script src="./js/home.js"></script>
+{{/each}}
+
+
