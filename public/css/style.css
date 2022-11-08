@@ -6,10 +6,22 @@
     --ddblue: #01012b;
 }
 
+#createBlogBtn{
+    min-width: 200px;
+}
+
+#createBlogInput {
+    min-width: 200px;
+}
+
 * {
     box-sizing: border-box;
     font-family: serif;
     color: var(--lblue);                /*default font color*/
+}
+
+input.savePeanutBtn {
+    color: var(--ddblue);
 }
 
 body {

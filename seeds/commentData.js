@@ -8,6 +8,11 @@ const commentData = [
         blog_id: 1
     },
     {
+        content: "so good, so smooth, so buttery.",
+        user_id: 1,
+        blog_id: 1
+    },
+    {
         content: "wow, such a fantastic post.",
         user_id: 2,
         blog_id: 2

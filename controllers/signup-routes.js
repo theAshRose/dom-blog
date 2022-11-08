@@ -1,10 +1,9 @@
 const router = require('express').Router();
-const { Blog, User, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
         // res.redirect('login')
-        res.render('login',
+        res.render('signup',
             // { layout: 'default', template: 'body'}
             );
     } catch (err) {

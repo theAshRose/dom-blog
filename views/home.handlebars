@@ -1,6 +1,6 @@
 
 {{#each blogs}}
-{{>blogs}}
+
 <h2 class="blogTitle">{{this.title}}</h2>
 <p class="blogContent">{{this.content}}, {{make_date createdAt}}
 </p> 
@@ -9,7 +9,7 @@
 
 
 <div class="authorWrapper row-4">
-    <a href="#" class="addPeanut"><button class="navBtn">Comment</button></a>
+    <a href="#" ><button class="addPeanutBtn navBtn">Comment</button></a>
     <i class="bogPostBy col-4 offset-lg-8 offset-md-7">
         <sm>{{user.username}}, {{make_date createdAt}}</sm>
     </i>
@@ -18,21 +18,20 @@
         <a href="#" class="editPeanut"><button class="navBtn">delete</button></a>
     </div>
 </div>
-<div style="display: none"class="commentInput row-12">
-    <input  class="col-8"><a class="commentSaveBtn col-4"><button class="navBtn">Save Comment</button></a>
+<div class="peanutInput row-12">
+    <input  class="savePeanutBtn" class="col-8"><a class="commentSaveBtn col-4"><button class="navBtn">Save Comment</button></a>
 </div>
-{{/each}}
 
-{{#each comments as |comment|}}
-{{>comment}}
+{{#each comments}}
+
 <div class="peanutWrapper row-12">
     <div class="eachPeanut row-3">
         <p class="peanutGallery">
-           {{comment.content}}
+           {{content}}
         </p>
         <div class="authorWrapper row 4">
-            <i class="bogPostBy row-2 offset-lg-5 offset-md-4">
-                <sm>{{comment user.username}} {{make_date createdAt}}</sm>
+            <i class="bogPostBy row-2 offset-1">
+                <sm>comment by: {{user.username}} {{make_date created_at}}</sm>
 
             </i>
 
@@ -47,3 +46,8 @@
 
 <hr>
 {{/each}}
+
+{{/each}}
+
+
+<script src="./js/comment.js"></script>
