@@ -8,11 +8,13 @@
     "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "mysql2": "^2.2.5",
+    "nodemon": "^2.0.20",
     "sequelize": "^6.3.5"
   },
   "scripts": {
     "start": "node server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "develop":"nodemon server.js"
   },
   "name": "dom-blog",
   "description": "",

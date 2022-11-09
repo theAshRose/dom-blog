@@ -4,7 +4,7 @@ const withAuth = require('../../utils/withAuth');
 
 
 router.post('/login', async (req, res) => {
-  console.log("elfmeat best meat")
+ 
   try {
     const userData = await User.findOne({
       where: {
@@ -13,10 +13,10 @@ router.post('/login', async (req, res) => {
     });
     console.log(userData + "userData")
     if (!userData) {
-      res.status(400).json({ message: "wrong credentials, FOOL" });
+      res.status(400).json({ message: "wrong credentials" });
       return;
     }
-    console.log("elfmeat best meat2")
+    
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -24,7 +24,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    console.log("finish me if you DARE")
+    
 
     req.session.save(() => {
       req.session.LoggedIn = true;
@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
       res.status(200).json({ userData });
     });
   } catch (err) {
-    console.log("catch activated")
+  
     res.status(500).json(err)
   }
 });
@@ -62,6 +62,7 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
       console.log("we are in.")
+      res.redirect('/')
     })
   } else {
     res.status(404).end();

@@ -22,7 +22,7 @@ const logInValidate = async (event) => {
       console.log(response)
       location.replace('/home');
     } else {
-      alert("die die")
+      
     }
   }
 };

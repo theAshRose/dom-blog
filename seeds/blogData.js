@@ -7,13 +7,13 @@ const blogData = [
         user_id: 1
     },
     {
-        title: "Vasu's questions",
-        content: "Why does Jerome hate me? What is my file structure again? Its '.env' right?",
+        title: "Why cats exist",
+        content: "They sleep anywhere, any table any chair.",
         user_id: 2
     },
     {
-        title: "Why haven't i been offered a TA position?",
-        content: "I swear im a smartypants, my mommy said so. I must achieve heights unseen",
+        title: "Why I like tech blogs",
+        content: "You get to blog about your tech",
         user_id: 3
     },
     {

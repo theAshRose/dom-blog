@@ -1,9 +1,9 @@
-
+const withAuth = require('../utils/withAuth');
 const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 
 
-router.get('/dashboard'), async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     console.log("dashboard here")
     try {
         const userBlogData = await Blog.findAll({
@@ -21,6 +21,6 @@ router.get('/dashboard'), async (req, res) => {
         console.log(err)
         res.status(500).json(err)
     }
-};
+});
 
 module.exports = router;
